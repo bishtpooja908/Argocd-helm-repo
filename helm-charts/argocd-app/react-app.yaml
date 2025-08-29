@@ -7,10 +7,10 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/bishtpooja908/Argocd-helm-repo.git'
-    path: react-app
+    path: helm-charts/react-helm
     helm:
       valueFiles:
-        - react-app-values.yaml
+        - react-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev      
