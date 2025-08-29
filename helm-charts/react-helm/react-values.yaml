@@ -1,5 +1,4 @@
 replicaCount: 2
-
 # Deployment configuration
 deployment:
   revisionHistoryLimit: 3
@@ -8,16 +7,13 @@ deployment:
     rollingUpdate:
       maxUnavailable: 25%
       maxSurge: 25%
-
 image:
   repository: "us-west1-docker.pkg.dev/prj-devops-anmol/generic-testing-repo/react-app"
   pullPolicy: IfNotPresent
-  tag: "latest"   # CI/CD pipeline should override this with commit SHA
-
+  tag: "fe4080fac73ec405dd843ae8cb9c4217b87f8963" # CI/CD pipeline should override this with commit SHA
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-
 # Container configuration
 container:
   port: 3000
@@ -26,10 +22,8 @@ container:
   volumeMounts: []
   args: []
   command: []
-
 # Volume configuration
 volumes: []
-
 # Health check configuration
 healthCheck:
   enabled: true
@@ -51,15 +45,12 @@ healthCheck:
     timeoutSeconds: 3
     failureThreshold: 3
     successThreshold: 1
-
 serviceAccount:
   create: true
   annotations: {}
   name: ""
   automountServiceAccountToken: false
-
 podAnnotations: {}
-
 podSecurityContext:
   runAsNonRoot: true
   runAsUser: 1000
@@ -67,7 +58,6 @@ podSecurityContext:
   fsGroup: 2000
   seccompProfile:
     type: RuntimeDefault
-
 securityContext:
   allowPrivilegeEscalation: false
   readOnlyRootFilesystem: true
@@ -76,7 +66,7 @@ securityContext:
   runAsGroup: 3000
   capabilities:
     drop:
-    - ALL
+      - ALL
   seccompProfile:
     type: RuntimeDefault
 
@@ -87,7 +77,7 @@ service:
   targetPort: 3000
 
 ingress:
-  enabled: false   # Disabled since we are using GKE Gateway
+  enabled: false # Disabled since we are using GKE Gateway
   className: ""
   annotations: {}
   hosts: []
@@ -127,10 +117,10 @@ security:
     audit: "restricted"
     warn: "restricted"
   annotations: {}
-
+  
 # GKE Gateway (instead of Ingress)
 gateway:
   enabled: true
   name: gke-gateway-external-lb
   namespace: dev
-  host: react.dev.example.com   
+  host: react.dev.example.com
