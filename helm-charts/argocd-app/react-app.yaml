@@ -8,6 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/bishtpooja908/Argocd-helm-repo.git'
     path: helm-charts/react-helm
+    targetRevision: feature/helm-charts-deployments
     helm:
       valueFiles:
         - react-values.yaml
