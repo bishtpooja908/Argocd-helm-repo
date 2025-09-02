@@ -7,10 +7,11 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/bishtpooja908/Argocd-helm-repo.git'
-    path: python-app
+    path: helm-charts/python-helm
+    targetRevision: feature/helm-charts-deployments
     helm:
       valueFiles:
-        - python-app-values.yaml
+        - python-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev      
