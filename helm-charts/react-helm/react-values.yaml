@@ -10,7 +10,7 @@ deployment:
 image:
   repository: "us-west1-docker.pkg.dev/prj-devops-anmol/generic-testing-repo/react-app"
   pullPolicy: IfNotPresent
-  tag: "7945596c35337af55ac4ed3be76af2ebe271d366" # CI/CD pipeline should override this with commit SHA
+  tag: "f53860193b54cd7c44c79f520f6e795f0292ad4a" # CI/CD pipeline should override this with commit SHA
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
