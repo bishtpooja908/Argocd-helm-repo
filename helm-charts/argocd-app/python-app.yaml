@@ -1,20 +1,20 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: python-app   # Unique in ArgoCD
-#   namespace: argocd     # Always argocd namespace
-# spec:
-#   project: default
-#   source:
-#     repoURL: 'https://github.com/bishtpooja908/Argocd-helm-repo.git'
-#     path: python-app
-#     helm:
-#       valueFiles:
-#         - python-app-values.yaml
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: dev      
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: python-app   # Unique in ArgoCD
+  namespace: argocd     # Always argocd namespace
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/bishtpooja908/Argocd-helm-repo.git'
+    path: python-app
+    helm:
+      valueFiles:
+        - python-app-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev      
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
