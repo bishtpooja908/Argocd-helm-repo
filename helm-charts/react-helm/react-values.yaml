@@ -72,8 +72,8 @@ securityContext:
 nameOverride: react-app
 service:
   type: ClusterIP
-  port: 3000
-  targetPort: 3000
+  port: 80
+  targetPort: 80
 ingress:
   enabled: false # Disabled since we are using GKE Gateway
   className: ""
@@ -112,4 +112,3 @@ gateway:
   enabled: true
   name: gke-gateway-external-lb
   namespace: dev
-  host: react.dev.example.com
