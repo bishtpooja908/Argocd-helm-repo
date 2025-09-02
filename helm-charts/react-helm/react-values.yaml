@@ -16,7 +16,7 @@ nameOverride: ""
 fullnameOverride: ""
 # Container configuration
 container:
-  port: 3000
+  port: 80
   name: react-app
   env: []
   volumeMounts: []
