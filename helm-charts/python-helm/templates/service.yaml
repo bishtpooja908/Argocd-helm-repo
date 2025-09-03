@@ -14,4 +14,3 @@ spec:
   selector:
     {{- include "python-chart.selectorLabels" . | nindent 4 }}
 
-#testing

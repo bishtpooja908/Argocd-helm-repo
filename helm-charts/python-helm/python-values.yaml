@@ -16,7 +16,7 @@ nameOverride: ""
 fullnameOverride: ""
 # Container configuration
 container:
-  port: 8501
+  port: 80
   name: python-app
   env: []
   volumeMounts: []
@@ -30,7 +30,7 @@ healthCheck:
   livenessProbe:
     httpGet:
       path: /
-      port: 8501
+      port: 80
     initialDelaySeconds: 30
     periodSeconds: 10
     timeoutSeconds: 5
@@ -39,7 +39,7 @@ healthCheck:
   readinessProbe:
     httpGet:
       path: /
-      port: 8501
+      port: 80
     initialDelaySeconds: 5
     periodSeconds: 5
     timeoutSeconds: 3
@@ -72,8 +72,8 @@ securityContext:
 nameOverride: python-app
 service:
   type: ClusterIP
-  port: 8501
-  targetPort: 8501
+  port: 80
+  targetPort: 80
 ingress:
   enabled: false # Disabled since we are using GKE Gateway
   className: ""
