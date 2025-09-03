@@ -16,7 +16,7 @@ nameOverride: ""
 fullnameOverride: ""
 # Container configuration
 container:
-  port: 80
+  port: 8501
   name: python-app
   env: []
   volumeMounts: []
@@ -73,7 +73,7 @@ nameOverride: python-app
 service:
   type: ClusterIP
   port: 80
-  targetPort: 80
+  targetPort: 8501
 ingress:
   enabled: false # Disabled since we are using GKE Gateway
   className: ""
