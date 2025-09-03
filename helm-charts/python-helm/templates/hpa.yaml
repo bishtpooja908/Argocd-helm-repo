@@ -3,6 +3,8 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ include "python-chart.fullname" . }}
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
   labels:
     {{- include "python-chart.labels" . | nindent 4 }}
 spec:
