@@ -29,8 +29,8 @@ healthCheck:
   enabled: true
   livenessProbe:
     httpGet:
-      path: /
-      port: http
+      path: /python
+      port: 8501
     initialDelaySeconds: 30
     periodSeconds: 10
     timeoutSeconds: 5
@@ -38,8 +38,8 @@ healthCheck:
     successThreshold: 1
   readinessProbe:
     httpGet:
-      path: /
-      port: http
+      path: /python
+      port: 8501
     initialDelaySeconds: 5
     periodSeconds: 5
     timeoutSeconds: 3
