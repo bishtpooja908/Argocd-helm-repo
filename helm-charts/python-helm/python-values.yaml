@@ -10,7 +10,7 @@ deployment:
 image:
   repository: "us-west1-docker.pkg.dev/prj-devops-anmol/generic-testing-repo/python-app"
   pullPolicy: Always
-  tag: "c8b95f09256b601866b8416fe449d5cce3987139" # updating CI/CD pipeline should override this with commit SHA
+  tag: "6b71255adba97dae072ab63918b16b42cfffa650" # updating CI/CD pipeline should override this with commit SHA
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
