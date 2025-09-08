@@ -10,7 +10,7 @@ deployment:
 image:
   repository: "us-west1-docker.pkg.dev/prj-devops-anmol/generic-testing-repo/python-app"
   pullPolicy: Always
-  tag: "fe7de5d17053a0d05fe4ac9dcd7f49797f93928e" # updating CI/CD pipeline should override this with commit SHA
+  tag: "a4bbec57af4d66ce4a21af2ec3bb325c5099509c" # updating CI/CD pipeline should override this with commit SHA
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -18,17 +18,17 @@ fullnameOverride: ""
 container:
   port: 8501
   name: python-app
-  env: 
-  - name: DB_HOST
-    value: "10.10.12.2"        # replace with your MySQL host / service
-  - name: DB_PORT
-    value: "3306"
-  - name: DB_USER
-    value: "gke-generic-user"  # replace with your DB user
-  - name: DB_PASSWORD
-    value: "_u7|uRGhph0ql5H="     # replace with your DB password
-  - name: DB_DATABASE
-    value: "streamlit_app"
+  env:
+    - name: DB_HOST
+      value: "10.10.12.2" # replace with your MySQL host / service
+    - name: DB_PORT
+      value: "3306"
+    - name: DB_USER
+      value: "gke-generic-user" # replace with your DB user
+    - name: DB_PASSWORD
+      value: "_u7|uRGhph0ql5H=" # replace with your DB password
+    - name: DB_DATABASE
+      value: "streamlit_app"
   volumeMounts: []
   args: []
   command: []
