@@ -10,7 +10,7 @@ deployment:
 image:
   repository: "us-west1-docker.pkg.dev/prj-devops-anmol/generic-testing-repo/python-app"
   pullPolicy: Always
-  tag: "a4bbec57af4d66ce4a21af2ec3bb325c5099509c" # updating CI/CD pipeline should override this with commit SHA
+  tag: "939c260332aaf850951cf810b52950e8e97ca4c7" # updating CI/CD pipeline should override this with commit SHA
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -33,9 +33,9 @@ container:
   #   - name: DB_DATABASE
   #     value: "streamlit_app"
   volumeMounts:
-  - name: secrets-store-inline
-    mountPath: "/mnt/secrets-store"
-    readOnly: true
+    - name: secrets-store-inline
+      mountPath: "/mnt/secrets-store"
+      readOnly: true
   args: []
   command: []
 # Volume configuration
