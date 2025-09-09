@@ -70,8 +70,8 @@ healthCheck:
 serviceAccount:
   create: true
   annotations: {}
-  name: ""
-  automountServiceAccountToken: false
+  name: "generic-gke-sa"
+  automountServiceAccountToken: true
 podAnnotations: {}
 podSecurityContext:
   runAsNonRoot: true
