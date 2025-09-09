@@ -10,7 +10,7 @@ deployment:
 image:
   repository: "us-west1-docker.pkg.dev/prj-devops-anmol/generic-testing-repo/python-app"
   pullPolicy: Always
-  tag: "4a53d30aede219a5718d0e735d5a22252769bda5" # updating CI/CD pipeline should override this with commit SHA
+  tag: "b5c13eec131d20e302b3a1e42c917328f36c85b5" # updating CI/CD pipeline should override this with commit SHA
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -22,31 +22,31 @@ container:
   #   - secretRef:
   #       name: dev-secrets
   env:
-  - name: DB_USER
-    valueFrom:
-      secretKeyRef:
-        name: dev-secrets
-        key: DB_USER
-  - name: DB_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        name: dev-secrets
-        key: DB_PASSWORD
-  - name: DB_HOST
-    valueFrom:
-      secretKeyRef:
-        name: dev-secrets
-        key: DB_HOST
-  - name:  DB_NAME
-    valueFrom:
-      secretKeyRef:
-        name: dev-secrets
-        key: DB_NAME
-  - name: DB_PORT
-    valueFrom:
-      secretKeyRef:
-        name: dev-secrets
-        key: DB_PORT
+    - name: DB_USER
+      valueFrom:
+        secretKeyRef:
+          name: dev-secrets
+          key: DB_USER
+    - name: DB_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: dev-secrets
+          key: DB_PASSWORD
+    - name: DB_HOST
+      valueFrom:
+        secretKeyRef:
+          name: dev-secrets
+          key: DB_HOST
+    - name: DB_NAME
+      valueFrom:
+        secretKeyRef:
+          name: dev-secrets
+          key: DB_NAME
+    - name: DB_PORT
+      valueFrom:
+        secretKeyRef:
+          name: dev-secrets
+          key: DB_PORT
   volumeMounts:
     - name: secrets-store-inline
       mountPath: "/mnt/secrets-store"
