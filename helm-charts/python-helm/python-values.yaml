@@ -19,11 +19,10 @@ container:
   port: 8501
   name: python-app
   envFrom:
-    - secretRef:
-        name: dev-secrets
-  env:
     - name: DB_PORT
       value: "3306"
+    - secretRef:
+        name: dev-secrets
   # env:
   #   - name: DB_HOST
   #     value: "10.10.12.2" # replace with your MySQL host / service
